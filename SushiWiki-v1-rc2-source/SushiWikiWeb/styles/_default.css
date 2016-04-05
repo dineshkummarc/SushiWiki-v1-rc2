@@ -1,0 +1,82 @@
+body
+{
+	font-size: x-small;
+	margin: 0px 5px;
+	font-family: geneva, arial, helvetica;
+	background-color: gold;
+}
+
+TD.topzone1
+{
+	background-color: White;
+}
+TD.topzone2
+{
+	BACKGROUND-POSITION-X: right;
+	background-image: url(default_topzone.gif);
+	background-color: gold;
+}
+
+DIV.pagezone
+{
+	background-color: white;
+}
+
+TABLE
+{
+	font-size: x-small;
+	margin: 0px;
+	font-family: geneva, arial, helvetica;
+}
+
+
+TABLE.popup
+{
+	color: green;
+	font-family: verdana;
+	background-color: #ffff33;
+}
+
+.page_title
+{
+	font-size: large;
+	color: black;
+	font-family: 'Arial Black';
+	font-variant: small-caps;
+}
+
+INPUT.search
+{
+	background-color: #ffff66;
+}
+
+
+
+H1
+{
+	color: gray;
+}
+H2
+{
+	color: gray;
+}
+H3
+{
+	color: gray;
+}
+H4
+{
+	color: gray;
+}
+H5
+{
+	color: gray;
+}
+
+.rssFeed
+{
+	border-right: #ffcc00 thin inset;
+	border-top: #ffcc00 thin inset;
+	border-left: #ffcc00 thin inset;
+	border-bottom: #ffcc00 thin inset;
+}

@@ -1,0 +1,201 @@
+body
+{
+	padding-right: 0px;
+	padding-left: 0px;
+	font-size: xx-small;
+	padding-bottom: 0px;
+	margin: 2px 0px 0px 2px;
+	padding-top: 0px;
+	font-family: Verdana;
+}
+
+A
+{
+	font-size: xx-small;
+	color: blue;
+	font-family: Verdana;
+}
+
+
+.search
+{
+	font-size: xx-small;
+	font-family: Verdana;
+}
+
+
+A:hover
+{
+	color: red;
+}
+.menu
+{
+		font-size: xx-small;
+}	
+
+.menu_actions
+{
+	background-image: url(..\images\menu_action_back.gif);
+	background-repeat: repeat-x;
+	background-color: transparent;
+}
+
+.title_zone
+{
+	background-color: #e6e6fa;
+}
+
+.page_title
+{
+	font-weight: bold;
+	font-family: Arial;
+	background-color: #e6e6fa;
+}
+
+.page_title_info
+{
+	font-family: Verdana;
+	background-color: #e6e6fa;
+		font-size: xx-small;
+
+}
+.page_info
+{
+	font-size: xx-small;
+	font-family: Verdana;
+	background-color: #e6e6fa;
+}
+
+.info
+{
+	font-weight: bold;
+}
+
+.datalist
+{
+	font-size: xx-small;
+	font-family: Verdana;
+}
+
+.index_letter
+{
+	font-weight: bold;
+	font-size: smaller;
+	color: green;
+	font-family: Arial;
+}
+
+.wikitable
+{
+	border-right: gray 1px solid;
+	border-top: gray 1px solid;
+	font-size: xx-small;
+	border-left: gray 1px solid;
+	border-bottom: gray 1px solid;
+	font-family: Verdana;
+}
+
+.wikitable_pyjama
+{
+	font-size: xx-small;
+	font-family: Verdana;
+	background-color: #ccccff;
+}
+
+.wikitable_header
+{
+	font-weight: bold;
+	font-size: xx-small;
+	color: #ffffff;
+	font-family: Verdana;
+	background-color: #000000;
+}
+
+H1
+{
+	font-weight: bold;
+	font-size: medium;
+	color: slateblue;
+	text-decoration: underline;
+	position: relative;
+	top: 20px;
+}
+
+H2
+{
+	font-weight: bold;
+	font-size: medium;
+	color: slateblue;
+	text-indent: 10px;
+	font-style: italic;
+	position: relative;
+	top: 20px;
+}
+
+H3
+{
+	font-weight: normal;
+	font-size: medium;
+	color: slateblue;
+	text-indent: 20px;
+	position: relative;
+	top: 20px;
+}
+
+H4
+{
+	font-weight: bold;
+	font-size: small;
+	color: slateblue;
+	text-decoration: underline;
+	text-indent: 30px;
+	position: relative;
+	top: 10px;
+}
+
+H5
+{
+	font-weight: bold;
+	font-size: small;
+	color: slateblue;
+	text-indent: 40px;
+	font-style: italic;
+	position: relative;
+	top: 10px;
+}
+
+H6
+{
+	font-weight: normal;
+	font-size: small;
+	color: slateblue;
+	text-indent: 50px;
+	position: relative;
+	top: 10px;
+}
+
+.input_panel
+{
+	border-right: #cc9999 double;
+	border-top: #cc9999 double;
+	margin-top: 5px;
+	font-size: x-small;
+	margin-bottom: 5px;
+	border-left: #cc9999 double;
+	border-bottom: #cc9999 double;
+	font-family: Verdana;
+	background-color: lightsteelblue;
+}
+
+.warning
+{
+	font-weight: bold;
+	font-size: larger;
+	color: #c71585;
+	font-family: Arial; background
+}
+
+.editZone
+{
+	background: #ffffcc;
+}

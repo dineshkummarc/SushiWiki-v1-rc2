@@ -1,0 +1,24 @@
+.CodeComment
+{
+	color:Green;
+}
+.CodeKeyword
+{
+	color:Blue;
+}
+.CodeString
+{
+	color:Red;
+}
+
+.CodeBackground
+{
+	background-color:#eeeeee;
+	width:80%;
+	border:solid 1px #000000;
+	padding:5px;
+}
+.codeChar
+{
+	color:Red;
+}

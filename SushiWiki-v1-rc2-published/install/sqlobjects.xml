@@ -1,0 +1,199 @@
+﻿<RIKIWIKI><SQL_OBJECTS><WikiSP_CheckForWikiName>CREATE PROCEDURE WikiSP_CheckForWikiName
+(
+	@inpTitle		varchar (256)
+)
+ AS
+SELECT  TOP 1 lastUpdated,updatedBy,ownedBy,[public] FROM WikiPages
+WHERE UPPER(title) = UPPER(@inpTitle) ORDER BY lastUpdated DESC
+</WikiSP_CheckForWikiName><WikiSP_DeleteWikiPage>CREATE PROCEDURE WikiSP_DeleteWikiPage
+( 
+	@inpTitle		varchar (256)
+)
+ AS
+DELETE WikiPages WHERE UPPER(title) = UPPER(@inpTitle) 
+</WikiSP_DeleteWikiPage><WikiSP_ExportWikiPages>CREATE PROCEDURE WikiSP_ExportWikiPages
+( 
+	@inpExportType	varchar (256),
+	@inpExportCriteria varchar(256)
+)
+AS
+
+IF @inpExportType = 'ALL'
+BEGIN
+SELECT title,ownedBy,updatedBy,pageData,type FROM WikiPages w
+WHERE id= 
+(select top 1 id from WikiPages where title=w.title ORDER BY lastUpdated DESC)
+ORDER BY title ASC
+END
+ELSE  IF @inpExportType = 'MY'
+BEGIN
+SELECT title,ownedBy,updatedBy,pageData,type FROM WikiPages w
+WHERE id= 
+(select top 1 id from WikiPages where title=w.title ORDER BY lastUpdated DESC) and w.ownedBy = @inpExportCriteria
+ORDER BY title ASC
+END
+ELSE  IF @inpExportType = 'SELECTED'
+BEGIN
+SELECT title,ownedBy,updatedBy,pageData,type FROM WikiPages w
+WHERE id= 
+(select top 1 id from WikiPages where title=w.title ORDER BY lastUpdated DESC) and CHARINDEX('\' + w.title + '\',@inpExportCriteria) &lt;&gt; 0
+ORDER BY title ASC
+END</WikiSP_ExportWikiPages><WikiSP_GetDownloadsPerDay>CREATE PROCEDURE WikiSP_GetDownloadsPerDay
+AS
+
+SELECT     cast(CONVERT(char(11), date) as datetime) AS date, COUNT(*) AS nbr
+FROM  WikiVisits where [user] != 'EricGroise' and ref_wikipagetitle = 'WikiDownload'
+GROUP BY cast(CONVERT(char(11), date) as datetime) order by date</WikiSP_GetDownloadsPerDay><WikiSP_GetNbrHitsPerDay>CREATE PROCEDURE WikiSP_GetNbrHitsPerDay
+AS
+
+SELECT     cast(CONVERT(char(11), date) as datetime) AS date, COUNT(*) AS nbr
+FROM  WikiVisits 
+GROUP BY cast(CONVERT(char(11), date) as datetime) order by date</WikiSP_GetNbrHitsPerDay><WikiSP_GetNbrVisitorsPerDay>CREATE PROCEDURE WikiSP_GetNbrVisitorsPerDay
+AS
+
+SELECT     cast(CONVERT(char(11), date) as datetime) AS date, COUNT(DISTINCT ip) AS nbr
+FROM         WikiVisits 
+GROUP BY cast(CONVERT(char(11), date) as datetime) order by date
+
+</WikiSP_GetNbrVisitorsPerDay><WikiSP_GetPagesToEmail>CREATE PROCEDURE WikiSP_GetPagesToEmail 
+@inpLast		DateTime 
+ AS
+SELECT  title,updatedBy  FROM WikiPages
+WHERE lastUpdated &gt; @inpLast ORDER BY lastUpdated DESC</WikiSP_GetPagesToEmail><WikiSP_GetPagesToEmailDay>CREATE PROCEDURE WikiSP_GetPagesToEmailDay
+ AS 
+SELECT  title,updatedBy FROM WikiPages
+WHERE datediff( hour, lastUpdated, getdate())&lt;24 ORDER BY lastUpdated DESC
+</WikiSP_GetPagesToEmailDay><WikiSP_GetPagesToEmailHour>CREATE PROCEDURE WikiSP_GetPagesToEmailHour
+ AS  
+SELECT  title,updatedBy FROM WikiPages
+WHERE datediff( minute, lastUpdated, getdate())&lt;60 ORDER BY lastUpdated DESC
+</WikiSP_GetPagesToEmailHour><WikiSP_GetPagesToEmailWeek>CREATE PROCEDURE WikiSP_GetPagesToEmailWeek
+ AS
+SELECT  title,updatedBy FROM WikiPages
+WHERE datediff( day, lastUpdated, getdate())&lt;=7 ORDER BY lastUpdated DESC
+</WikiSP_GetPagesToEmailWeek><WikiSP_GetTop10New>CREATE PROCEDURE WikiSP_GetTop10New
+ AS 
+SELECT     TOP 10 title, MIN(lastUpdated) AS date
+FROM         WikiPages
+GROUP BY title
+ORDER BY MIN(lastUpdated) DESC</WikiSP_GetTop10New><WikiSP_GetUserStats>CREATE Procedure WikiSP_GetUserStats
+( 
+    @user   nvarchar(100),
+    @pages integer OUTPUT   
+)
+AS
+SELECT
+    @pages = count(*) 
+FROM
+    WikiPages
+    WHERE updatedBy = @user</WikiSP_GetUserStats><WikiSP_GetWeekTop10>CREATE PROCEDURE WikiSP_GetWeekTop10
+ AS 
+SELECT     title, COUNT(*) AS nbr
+FROM         WikiPages
+WHERE     (DATEDIFF(day, lastUpdated, GETDATE()) &lt;= 7)
+GROUP BY title
+ORDER BY COUNT(*) DESC</WikiSP_GetWeekTop10><WikiSP_GetWikiPage>CREATE PROCEDURE WikiSP_GetWikiPage
+(
+	@inpTitle	varchar (256)
+)
+AS
+SELECT TOP 1 lastUpdated, title, type, updatedBy, ownedBy, pageData, lockedBy,[public]
+FROM WikiPages
+WHERE title = @inpTitle
+ORDER BY lastUpdated DESC
+</WikiSP_GetWikiPage><WikiSP_GetWikiPageById>CREATE PROCEDURE WikiSP_GetWikiPageById
+(
+	@inpId	varchar (256)
+)
+AS
+SELECT TOP 1 lastUpdated, title, type, updatedBy, ownedBy, pageData, lockedBy,[public]
+FROM WikiPages
+WHERE id = @inpId
+ORDER BY lastUpdated DESC 
+</WikiSP_GetWikiPageById><WikiSP_GetWikiPageHistory>CREATE PROCEDURE WikiSP_GetWikiPageHistory
+(
+	@inpTitle	varchar (256)
+)
+AS
+SELECT lastUpdated as date, updatedBy as updatedby,  id as id
+FROM WikiPages
+WHERE title = @inpTitle
+ORDER BY lastUpdated DESC
+</WikiSP_GetWikiPageHistory><WikiSP_GetWikiPageList>CREATE PROCEDURE WikiSP_GetWikiPageList AS
+SELECT DISTINCT title FROM WikiPages
+ORDER BY title ASC
+</WikiSP_GetWikiPageList><WikiSP_GetWikiPageShortInfo>CREATE PROCEDURE WikiSP_GetWikiPageShortInfo
+(
+	@inpTitle		varchar (256)
+)
+ AS
+SELECT title FROM WikiPages
+WHERE title = @inpTitle 
+</WikiSP_GetWikiPageShortInfo><WikiSP_Log>CREATE PROCEDURE WikiSP_Log
+(
+	@date			datetime,
+	@type			varchar(64),
+	@subtype		varchar(64),
+	@text			varchar(256),
+	@data			text
+
+) 
+AS
+
+INSERT INTO WikiLog ([date],type,subtype,[text],data)
+VALUES (@date,@type,@subtype,@text,@data)</WikiSP_Log><WikiSP_LogVisit>CREATE PROCEDURE WikiSP_LogVisit
+(
+	@wikiPageTitle	varchar (256),
+	@date			datetime,
+	@ip				varchar(20),
+	@user	 varchar (256)
+) 
+AS
+
+INSERT INTO WikiVisits (ref_wikipagetitle,[date],ip,[user])
+VALUES (@wikiPageTitle, @date, @ip, @user)</WikiSP_LogVisit><WikiSP_PurgeVisits>CREATE PROCEDURE WikiSP_PurgeVisits
+(
+	@preserve       int
+) 
+AS
+
+DELETE FROM WikiVisits
+WHERE ([date] &lt; (DATEADD(day,-@preserve,getdate())))
+
+</WikiSP_PurgeVisits><WikiSP_SimpleFullTextSearch>CREATE PROCEDURE WikiSP_SimpleFullTextSearch
+(
+	@inpTitle varchar (256)
+)
+AS
+SELECT title,replace(substring(pageData,patindex('%' + @inpTitle + '%',pageData)-20,45),@inpTitle,'&lt;span style="BACKGROUND-COLOR: #ffff6f"&gt;&lt;b&gt;' + @inpTitle + '&lt;/b&gt;&lt;/span&gt;') as  found FROM WikiPages w
+WHERE id= 
+(select top 1 id from WikiPages where title=w.title ORDER BY lastUpdated DESC)
+and pageData like '%' + @inpTitle + '%'
+ORDER BY title ASC 
+</WikiSP_SimpleFullTextSearch><WikiSP_WriteNewWikiPage>CREATE PROCEDURE WikiSP_WriteNewWikiPage
+(
+	@inpLastUpdated	datetime,
+	@inpTitle		varchar (256),
+	@inpType		varchar(16),
+	@inpUpdatedBy	varchar (256),
+	@inpOwner		varchar(256),
+	@inpPageData	text,
+	@preserve       int,
+	@public			int
+) 
+AS
+BEGIN TRANSACTION
+DELETE FROM WikiPages
+WHERE (title = @inpTitle) AND (lastUpdated &lt; (DATEADD(day,@preserve,getdate())))
+
+IF @inpOwner = ''
+	BEGIN
+		INSERT INTO WikiPages (lastUpdated,title,type,updatedBy,pageData,ownedBy,[public])
+		VALUES (@inpLastUpdated, @inpTitle, @inpType, @inpUpdatedBy, @inpPageData,@inpUpdatedBy,@public)
+	END
+ELSE
+	BEGIN
+		INSERT INTO WikiPages (lastUpdated,title,type,UpdatedBy,pageData,ownedBy,[public])
+		VALUES (@inpLastUpdated, @inpTitle, @inpType, @inpUpdatedBy, @inpPageData,@inpOwner,@public)
+	END
+COMMIT TRANSACTION</WikiSP_WriteNewWikiPage><WikiPages>CREATE TABLE [WikiPages]([lastUpdated] [datetime] NOT NULL, [title] [varchar](256)  NOT NULL, [type] [varchar](16) NOT NULL DEFAULT ('WIKI'), [updatedBy] [varchar](256) NOT NULL, [pageData] [ntext] NULL, [lockedBy] [varchar](256) NOT NULL  DEFAULT (''), [id] [decimal](18, 0) IDENTITY (1, 1) NOT NULL , [ownedBy] [varchar](256) NOT NULL DEFAULT ('Wiki'), [public] [bit] NOT NULL DEFAULT (1)) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]</WikiPages><WikiLog>CREATE TABLE [wikiLog] ([date] [datetime] NOT NULL ,[type] [varchar] (64) NOT NULL DEFAULT ('unknown'),[text] [varchar] (256)  NOT NULL DEFAULT (''),[data] [text] NOT NULL DEFAULT (''),[subtype] [varchar] (64) NOT NULL DEFAULT ('')) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]</WikiLog><WikiVisits>CREATE TABLE [WikiVisits] ([ref_wikipagetitle] [varchar] (256)  NOT NULL ,[date] [datetime] NOT NULL ,[ip] [varchar] (20) NULL ,[user] [varchar] (256) NOT NULL ) ON [PRIMARY]</WikiVisits></SQL_OBJECTS></RIKIWIKI>

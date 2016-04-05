@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<glossary language="cs"	alias = "cs csharp c-sharp">
+<subPattern	name="keywords">abstract|event|new|struct|as|explicit|null|switch|base|extern|object|this|bool|false|operator|throw|break|finally|out|true|byte|fixed|override|try|case|float|params|typeof|catch|for|private|uint|char|foreach|protected|ulong|checked|goto|public|unchecked|class|if|readonly|unsafe|const|implicit|ref|ushort|continue|in|return|using|decimal|int|sbyte|virtual|default|interface|sealed|volatile|delegate|internal|short|void|do|is|sizeof|while|double|lock|stackalloc|else|long|static|enum|namespace|string</subPattern>
+<subPattern	name="oneLineComment">//.*?\n|#.*?\n</subPattern>
+<subPattern	name="multilineComment">/\*.*\*/</subPattern>
+<subPattern	name="string"><![CDATA[".*?(?<!(?<!\\)\\)"]]></subPattern>
+<subPattern name="verbatimString">@".*?"</subPattern>
+<subPattern name="char"><![CDATA['.*?(?<!(?<!\\)\\)']]></subPattern>
+<pattern singleLine="true" ignoreCase="false"><![CDATA[((?<comment>$multilineComment)|(?<comment>$oneLineComment)|(?<string>$verbatimString)|(?<string>$string)|(?<char>$char)|\b(?<keyword>$keywords)\b)]]></pattern>
+</glossary>

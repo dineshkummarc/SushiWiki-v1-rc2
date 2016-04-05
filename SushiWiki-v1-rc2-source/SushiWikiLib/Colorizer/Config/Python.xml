@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<glossary language="py"	alias = "python">
+<subPattern	name="keywords">and|del|for|is|raise|assert|elif|from|lambda|return|break|else|global|not|try|class|except|if|or|while|continue|exec|import|pass|yield|def|finally|in|print</subPattern>
+<subPattern	name="oneLineComment">#.*?\n</subPattern>
+<subPattern name="verbatimString">""".*?"""</subPattern>
+<subPattern	name="string"><![CDATA[".*?(?<!(?<!\\)\\)"|'.*?(?<!(?<!\\)\\)']]></subPattern>
+<pattern singleLine="true" ignoreCase="false"><![CDATA[((?<comment>$oneLineComment)|(?<string>$verbatimString)|(?<string>$string)|\b(?<keyword>$keywords)\b)]]></pattern>
+</glossary>

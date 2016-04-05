@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<glossary language="js"	alias = "jscript javascript ecmascript">
+<subPattern	name="keywords">break|case|catch|class|const|continue|debugger|default|delete|do|else|export|extends|false|finally|for|function|if|import|in|instanceof|new|null|protected|return|super|switch|this|throw|true|try|typeof|var|while|with</subPattern>
+<subPattern	name="oneLineComment">//.*?\n</subPattern>
+<subPattern	name="multilineComment">/\*.*\*/</subPattern>
+<subPattern	name="string"><![CDATA[".*?(?<!(?<!\\)\\)"|'.*?(?<!(?<!\\)\\)']]></subPattern>
+<pattern singleLine="true" ignoreCase="false"><![CDATA[((?<comment>$multilineComment)|(?<comment>$oneLineComment)|(?<string>$string)|\b(?<keyword>$keywords)\b)]]></pattern>
+</glossary>

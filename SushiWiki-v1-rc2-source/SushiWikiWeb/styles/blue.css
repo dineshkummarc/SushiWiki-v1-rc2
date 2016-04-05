@@ -1,0 +1,181 @@
+BODY
+{
+	font-size: smaller;
+	background-image: url(blue_back.png);
+	margin: 1px;
+	font-family: Verdana;
+}
+
+TABLE
+{
+	font-size: x-small;
+	background-image: url(blue_back.png);
+	margin: 1px;
+	font-family: Verdana;
+}
+
+INPUT{
+	font-size : 8pt;
+	font-weight : bold;
+}
+A:active
+{
+	color: #3399cc;
+	text-decoration: none;
+}
+A:link {
+	COLOR: #3399cc;
+	TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #3399cc;
+	TEXT-DECORATION: none
+}
+A:hover
+{
+	color: #3399cc;
+	text-decoration: underline;
+}
+
+UL{
+	margin-bottom : 0;
+	margin-left : 18px;
+	margin-right : 0;
+	margin-top : 0;
+}
+UL UL LI{
+	margin-bottom : 0;
+	margin-left : -10px;
+	margin-right : 0;
+	margin-top : 0;
+}
+
+
+H1
+{
+	font-weight: bold;
+	color: #3399cc;
+	border-bottom-style: double;
+}
+H2
+{
+	font-weight: bold;
+	color: #3399cc;	
+	text-decoration: underline;
+}
+H3
+{
+	font-weight: bold;
+	color: #3399cc;
+	font-style: italic;
+}
+H4
+{
+	color: #3399cc;
+	border-bottom: green 1px solid;
+}
+H5
+{
+	color: #3399cc;
+}
+H6
+{
+	color: #3399cc;
+}
+.wikiinfo
+{
+	font-weight: bold;
+	font-size: xx-small;
+	color: darkgray;
+	font-family: Verdana;
+}
+
+.warning
+{
+	font-weight: bold;
+	font-size: xx-small;
+	color: red;
+	font-family: Verdana;
+}
+
+A.wikiinfo:link
+{
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+A.top_menu
+{
+	border-right: lightcyan thin outset;
+	border-top: lightcyan thin outset;
+	font-size: x-small;
+	border-left: lightcyan thin outset;
+	color: black;
+	border-bottom: lightcyan thin outset;
+	font-family: 'Arial';
+}
+
+A.main_menu
+{
+	border-right: lightcyan thin outset;
+	border-top: lightcyan thin outset;
+	font-size: x-small;
+	border-left: lightcyan thin outset;
+	color: black;
+	border-bottom: lightcyan thin outset;
+	font-family: 'Arial';
+}
+
+.status_bar
+{
+	font-weight: bold;
+	font-size: x-small;
+	color: black;
+	font-family: Verdana;
+}
+.footer
+{
+	font-family: Verdana;
+}
+TD.menu
+{
+	border-bottom: cornflowerblue thick double;
+}
+
+.editZone
+{
+	background-color: #ccffcc;
+}
+SPAN.filelist
+{
+	font-weight: bold;
+	font-size: xx-small;
+	font-family: Verdana;
+}
+
+TD.filelist
+{
+	font-weight: bold;
+	font-size: xx-small;
+	font-family: Verdana;
+}
+
+TABLE.datalist
+{
+	font-weight: bold;
+	font-size: xx-small;
+	font-family: Verdana;
+}
+
+.page_title
+{
+	font-size: large;
+	color: black;
+	font-family: 'Arial Black';
+	font-variant: small-caps;
+}
+
+TABLE.wikitop
+{
+	background-image: none;
+}

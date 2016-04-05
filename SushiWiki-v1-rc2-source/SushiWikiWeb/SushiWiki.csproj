@@ -1,0 +1,500 @@
+<VisualStudioProject>
+    <CSHARP
+        ProjectType = "Web"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{92B01F73-0116-44D0-8B7F-0152CB0A4394}"
+        SccProjectName = "SAK"
+        SccLocalPath = "SAK"
+        SccAuxPath = "SAK"
+        SccProvider = "SAK"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "SushiWiki"
+                AssemblyOriginatorKeyFile = ""
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "Library"
+                PreBuildEvent = ""
+                PostBuildEvent = ""
+                RootNamespace = "Wiki"
+                RunPostBuildEvent = "OnBuildSuccess"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "DEBUG;TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "true"
+                    NoStdLib = "false"
+                    NoWarn = "CS1591"
+                    Optimize = "false"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "true"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "false"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = "CS1591"
+                    Optimize = "true"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                    HintPath = "..\..\..\WINDOWS\Microsoft.NET\Framework\v1.0.3705\System.dll"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                    HintPath = "..\..\..\WINDOWS\Microsoft.NET\Framework\v1.0.3705\System.Data.dll"
+                />
+                <Reference
+                    Name = "System.Web"
+                    AssemblyName = "System.Web"
+                    HintPath = "..\..\..\WINDOWS\Microsoft.NET\Framework\v1.0.3705\System.Web.dll"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                    HintPath = "..\..\..\WINDOWS\Microsoft.NET\Framework\v1.0.3705\System.XML.dll"
+                />
+                <Reference
+                    Name = "System.Management"
+                    AssemblyName = "System.Management"
+                    HintPath = "..\..\..\WINDOWS\Microsoft.NET\Framework\v1.0.3705\System.Management.dll"
+                />
+                <Reference
+                    Name = "System.Web.Services"
+                    AssemblyName = "System.Web.Services"
+                    HintPath = "..\..\..\WINDOWS\Microsoft.NET\Framework\v1.0.3705\System.Web.Services.dll"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                    HintPath = "..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Drawing.dll"
+                />
+                <Reference
+                    Name = "SushiWikiLibV1"
+                    Project = "{5F8C70F3-367D-4B7B-9DB9-801B5EB37720}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "SushiWikiPlugins"
+                    Project = "{DACF5104-DA0B-410B-9683-9150371FB87A}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "_AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "default.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "default.aspx.cs"
+                    DependentUpon = "default.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Global.asax"
+                    SubType = "Component"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Global.asax.cs"
+                    DependentUpon = "Global.asax"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SushiWiki_Model.tgs"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Test.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Test.aspx.cs"
+                    DependentUpon = "Test.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Web.config"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Wiki.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Wiki.cs"
+                    DependentUpon = "Wiki.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiAttach.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiAttach.aspx.cs"
+                    DependentUpon = "WikiAttach.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiCache.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiCache.aspx.cs"
+                    DependentUpon = "WikiCache.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiCalendar.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiCalendar.aspx.cs"
+                    DependentUpon = "WikiCalendar.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiEdit.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiEdit.aspx.cs"
+                    DependentUpon = "WikiEdit.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiEditQuickHelp.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiEditQuickHelp.aspx.cs"
+                    DependentUpon = "WikiEditQuickHelp.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiEditTable.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiEditTable.aspx.cs"
+                    DependentUpon = "WikiEditTable.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiError.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiError.aspx.cs"
+                    DependentUpon = "WikiError.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiEvents.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiEvents.aspx.cs"
+                    DependentUpon = "WikiEvents.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiFooter.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiFooter.ascx.cs"
+                    DependentUpon = "WikiFooter.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiFooter.ascx.resx"
+                    DependentUpon = "WikiFooter.ascx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "WikiHeader.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiHeader.ascx.cs"
+                    DependentUpon = "WikiHeader.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiIndex.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiIndex.aspx.cs"
+                    DependentUpon = "WikiIndex.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiLog.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiLog.aspx.cs"
+                    DependentUpon = "WikiLog.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiLogin.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiLogin.aspx.cs"
+                    DependentUpon = "WikiLogin.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiPlugins.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiPlugins.aspx.cs"
+                    DependentUpon = "WikiPlugins.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiPreview.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiPreview.aspx.cs"
+                    DependentUpon = "WikiPreview.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiSearch.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiSearch.aspx.cs"
+                    DependentUpon = "WikiSearch.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiServices.asmx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiServices.asmx.cs"
+                    DependentUpon = "WikiServices.asmx"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiThumbnail.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiThumbnail.aspx.cs"
+                    DependentUpon = "WikiThumbnail.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiTools.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiTools.aspx.cs"
+                    DependentUpon = "WikiTools.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiToolsImport.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiToolsImport.aspx.cs"
+                    DependentUpon = "WikiToolsImport.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiUserSettings.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiUserSettings.aspx.cs"
+                    DependentUpon = "WikiUserSettings.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "WikiVisitStats.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "WikiVisitStats.aspx.cs"
+                    DependentUpon = "WikiVisitStats.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "install\LicenceAgreement.rtf"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "install\logo.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "install\Readme.rtf"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "install\sqlobjects.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "install\SushiWiki.ico"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "install\Wasabi.ico"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "install\WikiHome.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ModelSupport\default.txvpck"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "ModelSupport\Wiki\Wiki.txvpck"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "ModelSupport\Wiki\GUI\GUI.txvpck"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "ModelSupport\Wiki\GUI\Templates\Templates.txvpck"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "ModelSupport\Wiki\WebServices\WebServices.txvpck"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Resources\Strings.fr.txt"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "Resources\Strings.txt"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "styles\_default.css"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "styles\blue.css"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "styles\blue_back.png"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "styles\default.css"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "styles\green.css"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "styles\green_back.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "styles\green_menuback.jpg"
+                    BuildAction = "Content"
+                />
+                <Folder RelPath = "templates\" />
+            </Include>
+        </Files>
+        <StartupServices>
+            <Service ID = "{CF845C55-C321-4742-B673-E6212D061ED9}" />
+        </StartupServices>
+    </CSHARP>
+</VisualStudioProject>
+
